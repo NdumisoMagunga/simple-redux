@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import * as actions from '../actions';
 
 class About extends Component{
-    render() {
 
+    componentDidMount() {
+        this.props.fetchUsers();
+    };
+    
+    render() {
+        console.log(this.props.users);
         return (
             <div>
-                <p>
-                    lorem ipsum focus on <strong>About Page</strong>
-                </p>
+               {
+                   this.props.users.map((data, index) => {
+                       return(
+                           <li key={index}>{data.name} {data.email}</li>
+                       )
+                   })
+               }
             </div>
         )
     }
 }
 
-export default About;
+function mapStateToProps({users}) {
+return {
+    users,
+}
+}
+
+export default connect(mapStateToProps,actions) (About);

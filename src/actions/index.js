@@ -1,14 +1,8 @@
 import {
 FETCH_PHOTOS,
-FETCH_USERS,
-FETCH_POSTS
+FETCH_POSTS,
+FETCH_USERS
  } from './types';
-
-export const fetchUsers = () => async dispatch => {
-    const res  = await fetch('https://jsonplaceholder.typicode.com/users');
-    const data = await res.json();
-    dispatch({type: FETCH_USERS, payload: data});
-};
 
 export const fetchPhotos = () => async dispatch => {
     const res = await fetch('https://jsonplaceholder.typicode.com/photos');
@@ -21,3 +15,11 @@ export const fetchPosts = () => async dispatch => {
     const data = await res.json();
     dispatch({type: FETCH_POSTS, payload: data});
 };
+
+
+export const fetchUsers = () => async dispatch => {
+   const res = await fetch('https://jsonplaceholder.typicode.com/users');
+   const data = await res.json();
+   dispatch({type: FETCH_USERS, payload: data});
+};
+

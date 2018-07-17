@@ -1,13 +1,11 @@
 import { combineReducers } from 'redux';
 
 import photosReducer from './photosReducer';
-import usersReducer from './usersReducer';
 import postsReducer from './postsReducer';
-
+import usersReducer from './usersReducer';
 
 export default combineReducers ({
     photos: photosReducer,
-    users: usersReducer,
     posts: postsReducer,
-    
+    users: usersReducer,
 });

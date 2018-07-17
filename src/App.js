@@ -12,11 +12,11 @@ import * as actions from './actions';
 import {connect} from 'react-redux';
 
 class App extends Component {
-  
+
 componentDidMount() {
-  this.props.fetchUsers();
   this.props.fetchPhotos();
   this.props.fetchPosts();
+  this.props.fetchUsers();
 }
 
   render() {
@@ -35,9 +35,9 @@ componentDidMount() {
 
 function mapStateToProps({users,photos,posts}){
   return {
-    users,
     photos,
     posts,
+    users
   }
 }
 

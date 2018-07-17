@@ -1,9 +1,10 @@
 import { FETCH_USERS } from '../actions/types';
 
-export default (state = [], action) => {
-    switch(action.type) {
+
+export default (state=[], actions) => {
+    switch(actions.type) {
         case FETCH_USERS:
-        return action.payload || false;
+        return actions.payload || false;
         default:
         return state;
     }
